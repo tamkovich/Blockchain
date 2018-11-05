@@ -114,7 +114,7 @@ class Blockchain:
         parsed_url = urlparse(address)
         self.nodes.add(parsed_url.netloc)
 
-    def valid_chain(self, chain):
+    def valid_chain(self, chain: list) -> bool:
         """
         Determine if a given blockchain is valid
 
@@ -143,7 +143,7 @@ class Blockchain:
 
         return True
 
-    def resolve_conflicts(self):
+    def resolve_conflicts(self) -> bool:
         """
         This is our Consensus Algorithm, it resolves conflicts
         by replacing our chain with the longest one in the network.
